@@ -1,0 +1,162 @@
+
+header {
+  .more.btn {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .credits {
+    position: absolute;
+    color: #fff;
+    bottom: 5px;
+    right: 16px;
+    text-shadow: 2px 1px 3px #000;
+    @media (max-width: 47.99em) {
+      left: 16px;
+      text-align: center;
+      font-size: 80%;
+      bottom: 2px;
+    }
+  }
+}
+.submenu {
+  .tabs-paginator {
+
+    @media (max-width: 47.99em) {
+      display: none;
+    }
+    .tab-item {
+      .fa {
+        line-height: 36px;
+        font-size: 28px;
+        padding: 0 4px;
+        vertical-align: middle;
+        &:before {
+          line-height: 26px;
+          display: inline-block;
+          padding-bottom: 8px;
+        }
+      }
+    }
+    .tab-item-selected {
+      opacity: 1;
+      color: $theme-primary;
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.submenu {
+  background-color: transparent;
+  .tabs-paginator {
+    margin-top: 10px;
+    @media (max-width: 47.99em) {
+      display: none;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: $theme-light;
+      height: 1px;
+    }
+    .tab-item {
+      color: $theme-dark;
+      /*font-weight: 600;*/
+      opacity: 1;
+      .fa {
+        color: #fff;
+        display: block;
+        line-height: 48px;
+        font-size: 28px;
+        width: 48px;
+        height: 48px;
+        vertical-align: middle;
+        margin: 0 auto;
+        background-color: $theme-dark;
+        border-radius: 50%;
+        outline: 6px solid #fff;
+      }
+    }
+    .tab-item-selected {
+      transform: scale(1.2, 1.2);
+      transform-origin: 50% 65%;
+      opacity: 1;
+      color: $theme-primary;
+      .fa {
+        background-color: $theme-primary;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+.swiper-slide ul {
+  padding-left: 20px;
+  li {
+    line-height: 1.75em;
+    font-size: 1.17em;
+    @media (max-width: 63.99em) {
+      line-height: 1.35em;
+      font-size: 1.15em;
+    }
+    @media (max-width: 47.99em) {
+      line-height: 1.25em;
+      font-size: 1em;
+    }
+  }
+}
+/* Fixes ugly text rendering after animation*/
+ul[data-animate] {
+  transform: translate3d(0,0,0);
+}
+
+/* nested lists */
+/*.container ul ul {
+  list-style-type: none;
+  padding: 0 0 5px 12px;
+  li:before {
+    content: "-";
+    position: relative;
+    left: -12px;
+    font-weight: bold;
+  }
+}*/
+
+.fa-1x {
+  font-size: 28px;
+}
+
+
+.page.swiper-container {
+  position: fixed;
+  top: 0;
+}
+body.scroll-hack {
+  .page.swiper-container {
+    z-index: 0;
+  }
+  .overflow {
+    height: 120%;
+    xz-index: 1;
+    
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      bottom: calc(5% + 50px);
+      background-color: rgba(200,0,0,0.01);
+    };
+  }
+}
+body {
+  -webkit-tap-highlight-color: transparent; 
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include bass/head.html %}
+
+<body id="page-top" page="0">
+  <div class="available"></div>
+  <div class="image"></div>
+  {% include bass/menu.html %}
+
+  <div class="page swiper-container">
+    <!-- Add Pagination -->
+    <div class="main swiper-scrollbar"></div>
+
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        {% include bass/header.html %}
+      </div>
+
+      <div class="swiper-slide normal xbg-primary">
+        {% include bass/features.html %}
+      </div>
+
+      <div class="swiper-slide">
+        {% include bass/gallery.html %}
+      </div>
+
+      <div class="swiper-slide scrolling">
+        {% include bass/examples.html %}
+      </div>
+
+      <div class="swiper-slide compact bg-dark">
+        {% include bass/aside.html %}
+      </div>
+
+      <div class="swiper-slide compact">
+        {% include bass/contact.html %}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="overflow"></div>
+
+  {% include swiper-gallery.html %}
+
+  <script src="js/swiper.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

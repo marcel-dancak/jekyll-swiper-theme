@@ -1,0 +1,36 @@
+<div class="container swiper-container content nested item-list">
+  <div class=" swiper-wrapper">
+
+    <div class="swiper-slide">
+      <div class="page-padding" style="padding-bottom: 1em;">
+        <!-- <h4></h4> -->
+      </div>
+
+      {% for item in site.data.bass_examples %}
+      <div class="item">
+
+        {% if item.youtube_link %}
+        <a class="right"
+          target="_blank"
+          href="{{ item.youtube_link }}">
+          <i class="fa fa-youtube fa-1x"></i>
+          <p>{{ item.youtube_author }}</p>
+        </a>
+        {% endif %}
+
+        <a target="_blank"
+          href="https://rawgit.com/marcel-dancak/drums-and-bass/master/dist/latest/index.html#{{ item.project }}">
+          <span class="num">{{ forloop.index }}</span>
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.author }}</p>
+        </a>
+      </div>
+      {% endfor %}
+
+      <hr class="primary">
+    </div>
+
+  </div>
+
+  <div class="nested-swiper-scrollbar swiper-scrollbar"></div>
+</div>

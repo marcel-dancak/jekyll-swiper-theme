@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+FILE="$1"
+NAME="${FILE%.*}"
+
+if [[ ${FILE: -4} == ".pdf" ]]
+then
+	echo "pdf input"
+	TMP_SVG=${NAME}_tmp.svg
+	OUT_SVG=${NAME}.svg
+	pdf2svg $1 ${TMP_SVG}
+	scour ${TMP_SVG} ${OUT_SVG} --enable-viewboxing --enable-id-stripping --enable-comment-stripping --shorten-ids --indent=none
+	rm ${TMP_SVG}
+else
+	echo "svg input"
+	OUT_SVG=${NAME}_out.svg
+	scour ${FILE} ${OUT_SVG} --enable-viewboxing --enable-id-stripping --enable-comment-stripping --shorten-ids --indent=none
+fi
+
+# echo pdf2svg $1 ${TMP_SVG}
+# echo scour ${TMP_SVG} ${OUT_SVG} --enable-viewboxing --enable-id-stripping --enable-comment-stripping --shorten-ids --indent=none
+# echo rm ${TMP_SVG}
+
+# pdf2svg $1 ${TMP_SVG}
+# scour ${TMP_SVG} ${OUT_SVG} --enable-viewboxing --enable-id-stripping --enable-comment-stripping --shorten-ids --indent=none
+# rm ${TMP_SVG}
+
